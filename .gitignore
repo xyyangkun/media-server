@@ -1,0 +1,13 @@
+*.o
+libaio.so
+libdash/debug.linux/
+libflv/debug.linux/
+libhls/debug.linux/
+libmov/debug.linux/
+libmpeg/debug.linux/
+librtmp/debug.linux/
+librtp/debug.linux/
+librtsp/debug.linux/
+libsip/debug.linux/
+test/debug.linux/
+

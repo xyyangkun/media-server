@@ -12,6 +12,10 @@ OUTFILE = librtsp.a
 #--------------------------------------------------------------------
 INCLUDES = . \
 					./include \
+					../libmpeg/include/ \
+					../../avcodec/avbsf/include/ \
+					../libflv/include/ \
+					../libmov/include/ \
 					$(ROOT)/include \
 					$(ROOT)/libhttp/include \
 					../librtp/include
@@ -19,12 +23,17 @@ INCLUDES = . \
 #-------------------------------Source-------------------------------
 #
 #--------------------------------------------------------------------
-SOURCE_PATHS = source source/client source/server
+SOURCE_PATHS = source source/client source/server source/utils
 SOURCE_FILES = $(foreach dir,$(SOURCE_PATHS),$(wildcard $(dir)/*.cpp))
 SOURCE_FILES += $(foreach dir,$(SOURCE_PATHS),$(wildcard $(dir)/*.c))
 
-#SOURCE_FILES += $(ROOT)/source/digest/md5.c
-#SOURCE_FILES += $(ROOT)/source/base64.c
+SOURCE_FILES += $(ROOT)/source/digest/md5.c
+SOURCE_FILES += $(ROOT)/source/base64.c
+
+SOURCE_FILES += ../../avcodec/avbsf/src/aacbsf.c
+SOURCE_FILES += ../../avcodec/avbsf/src/h264bsf.c
+SOURCE_FILES += ../../avcodec/avbsf/src/h265bsf.c
+
 
 #-----------------------------Library--------------------------------
 #
